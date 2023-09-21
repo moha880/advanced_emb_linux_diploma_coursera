@@ -4,13 +4,13 @@ arg1=$1
 
 arg2=$2
 
-if [ ! -n $arg1  ];then
+if [ -z $arg1  ];then
         echo "the path : "$arg1" is not specified arg1 writer"
         exit 1
 fi
 
 
-if [ ! -n $arg2  ];then
+if [ -z $arg2  ];then
         echo "the : "$arg2" is not specified arg2 writer"
         exit 1
 fi
@@ -18,7 +18,7 @@ fi
 DIR="$(dirname "${arg1}")"
 
 if [ ! -d $DIR  ];then
-        mkdir $DIR
+        mkdir -p $DIR
 fi
 
 

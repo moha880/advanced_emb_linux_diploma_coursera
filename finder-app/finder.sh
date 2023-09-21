@@ -4,13 +4,13 @@ arg1=$1
 
 arg2=$2
 
-if [ ! -d $arg1  ];then
+if [ ! -d $arg1 && -z $arg1  ];then
 	echo "the path : "$arg1" is not specified"
 	exit 1
 fi
 
 
-if [ ! -n $arg2  ];then
+if [  -z $arg2  ];then
         echo "the : "$arg2" is not specified"
         exit 1
 fi
